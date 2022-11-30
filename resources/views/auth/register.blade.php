@@ -38,7 +38,7 @@
                             <label for="middleName" class="col-md-4 col-form-label text-md-right">Middle Name</label>
 
                             <div class="col-md-6">
-                                <input id="middleName" type="text" class="form-control @error('middleName') is-invalid @enderror" name="middleName" value="{{ old('middleName') }}" required autocomplete="middleName" autofocus>
+                                <input id="middleName" type="text" class="form-control @error('middleName') is-invalid @enderror" name="middleName" value="{{ old('middleName') }}"  autocomplete="middleName" autofocus>
 
                                 @error('middleName')
                                     <span class="invalid-feedback" role="alert">
@@ -52,7 +52,7 @@
                             <label for="surName" class="col-md-4 col-form-label text-md-right">Surname</label>
 
                             <div class="col-md-6">
-                                <input id="surName" type="text" class="form-control @error('surName') is-invalid @enderror" name="surName" value="{{ old('surName') }}" required autocomplete="middleName" autofocus>
+                                <input id="surName" type="text" class="form-control @error('surName') is-invalid @enderror" name="surName" value="{{ old('surName') }}"  autofocus>
 
                                 @error('surName')
                                     <span class="invalid-feedback" role="alert">
@@ -66,7 +66,7 @@
                             <label for="fullName" class="col-md-4 col-form-label text-md-right">Full Name <span style="color:red">*</span></label>
 
                             <div class="col-md-6">
-                                <input id="fullName" type="text" class="form-control @error('fullName') is-invalid @enderror" name="fullname" value="{{ old('fullName') }}" required autocomplete="fullName" autofocus>
+                                <input id="fullName" type="text" class="form-control @error('fullName') is-invalid @enderror" name="fullName" value="{{ old('fullName') }}" required autocomplete="fullName" autofocus>
 
                                 @error('fullName')
                                     <span class="invalid-feedback" role="alert">
@@ -94,7 +94,7 @@
                             <label for="companyName" class="col-md-4 col-form-label text-md-right">Company Name</label>
 
                             <div class="col-md-6">
-                                <input id="companyName" type="text" class="form-control @error('companyName') is-invalid @enderror" name="companyName" value="{{ old('companyName') }}" required autocomplete="companyName" autofocus>
+                                <input id="companyName" type="text" class="form-control @error('companyName') is-invalid @enderror" name="companyName" value="{{ old('companyName') }}"  autofocus>
 
                                 @error('companyName')
                                     <span class="invalid-feedback" role="alert">
@@ -108,7 +108,7 @@
                             <label for="companyTradeLicenceNo" class="col-md-4 col-form-label text-md-right">companyTradeLicenceNo</label>
 
                             <div class="col-md-6">
-                                <input id="companyTradeLicenceNo" type="text" class="form-control @error('companyTradeLicenceNo') is-invalid @enderror" name="companyTradeLicenceNo" value="{{ old('companyTradeLicenceNo') }}" required autocomplete="companyTradeLicenceNo" autofocus>
+                                <input id="companyTradeLicenceNo" type="text" class="form-control @error('companyTradeLicenceNo') is-invalid @enderror" name="companyTradeLicenceNo" value="{{ old('companyTradeLicenceNo') }}"  autofocus>
 
                                 @error('companyTradeLicenceNo')
                                     <span class="invalid-feedback" role="alert">
@@ -122,7 +122,7 @@
                             <label for="country" class="col-md-4 col-form-label text-md-right">Country</label>
 
                             <div class="col-md-6">
-                                <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}" required autocomplete="country" autofocus>
+                                <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}"  autofocus>
 
                                 @error('country')
                                     <span class="invalid-feedback" role="alert">
@@ -207,7 +207,13 @@
                             <label for="type" class="col-md-4 col-form-label text-md-right">Type Of Business <span style="color:red">*</span></label>
 
                             <div class="col-md-6">
-                                <input id="type" type="text" class="form-control @error('type') is-invalid @enderror" name="type" value="{{ old('type') }}" required autocomplete="type" autofocus>
+                                <!-- <input id="type" type="text" class="form-control @error('type') is-invalid @enderror" name="type" value="{{ old('type') }}" required autocomplete="type" autofocus> -->
+                                <select class="selectpicker form-control" data-live-search="true" name="type" required>
+                                <option data-tokens="Manufacturer" value="Manufacturer">Manufacturer</option>
+                                <option data-tokens="Distributor" value="Distributor">Distributor</option>
+                                <option data-tokens="Dealer" value="Dealer">Dealer</option>
+                                <option data-tokens="Retailer" value="Retailer">Retailer</option>
+                                </select>
 
                                 @error('type')
                                     <span class="invalid-feedback" role="alert">

@@ -67,5 +67,7 @@ class Kernel extends HttpKernel
         // 'SiteAdmin' => \App\Http\Middleware\SiteAdmin::class,
         'SiteAdmin' => \App\Http\Middleware\SiteAdmin::class,
         'AdminMiddleware' => \App\Http\Middleware\AdminMiddleware::class,
+        'Manufacturer' => \App\Http\Middleware\Manufacturer::class,
+        'Admin' => \App\Http\Middleware\Admin::class,
     ];
 }

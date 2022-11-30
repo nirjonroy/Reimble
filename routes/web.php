@@ -39,3 +39,8 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');;
 Route::get('/verify','Auth\RegisterController@verifyUser')->name('verify.user');
+
+Route::get('admin-dashboard', 'Backend\DashboardController@index')->name('dashboard')->middleware('Admin');
+Route::get('admin-backend-users', 'Backend\DashboardController@users')->name('admin.backend.users')->middleware('Admin');
+
+Route::get('manufacturer-dashboard', 'Manufacturer\ManufacturerController@index')->middleware('Manufacturer');
