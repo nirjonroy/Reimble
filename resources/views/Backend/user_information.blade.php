@@ -5,7 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
-<div style="margin-left:20%; margin-top:2%;">
+<div style="margin-left:15%; margin-top:2%;">
     <table id="table_id" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
@@ -35,7 +35,10 @@
                 <td>{{$user->country}}</td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->phone}}</td>
-                <td>Edit/ View/ Delete</td>
+                <td>
+                    <a href ="{{url('admin-backend-users-view/'. $user->id)}}" class="btn btn-success">View</a>
+                    <a href ="{{url('admin-backend-users-update-Role/'. $user->id)}}" class="btn btn-warning">Update User Role</a>
+                </td>
                 
             </tr>
             @endforeach

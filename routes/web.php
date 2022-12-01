@@ -42,5 +42,8 @@ Route::get('/verify','Auth\RegisterController@verifyUser')->name('verify.user');
 
 Route::get('admin-dashboard', 'Backend\DashboardController@index')->name('dashboard')->middleware('Admin');
 Route::get('admin-backend-users', 'Backend\DashboardController@users')->name('admin.backend.users')->middleware('Admin');
+Route::get('admin-backend-users-view/{id}', 'Backend\DashboardController@users_view')->name('admin.user.view')->middleware('Admin');
+Route::get('admin-backend-users-update-Role/{id}', 'Backend\DashboardController@Update_user_role')->name('admin.user.update_role')->middleware('Admin');
+Route::post('admin-backend-users-update-Role-updated/{id}', 'Backend\DashboardController@Update_user_role_updated')->name('admin.user.update_role.updated')->middleware('Admin');
 
 Route::get('manufacturer-dashboard', 'Manufacturer\ManufacturerController@index')->middleware('Manufacturer');
