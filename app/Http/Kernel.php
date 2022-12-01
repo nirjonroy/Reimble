@@ -43,6 +43,12 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
+        'Admin' => [
+            \App\Http\Middleware\Admin::class,
+        ],
+        'Manufacturer' => [
+            \App\Http\Middleware\Manufacturer::class,   
+        ],
         
     ];
 

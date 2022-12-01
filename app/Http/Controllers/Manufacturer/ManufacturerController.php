@@ -9,6 +9,12 @@ class ManufacturerController extends Controller
 {
     public function index()
     {
+        
         return view('Manufacturer.index');
     }
+
+    public function OpenAccount(Request $request, $id, $companyName)
+        {
+           return view('Manufacturer.Dashboard');
+        }
 }

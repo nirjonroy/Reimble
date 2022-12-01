@@ -194,6 +194,15 @@
                 $name = Auth::user()->name;
             @endphp
           <a href="#" class="d-block">{{Auth::user()->firstName}}</a>
+          <a style="color:white" class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
         </div>
       </div>
 
