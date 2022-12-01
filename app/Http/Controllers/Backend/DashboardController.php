@@ -33,6 +33,6 @@ class DashboardController extends Controller
         $data = array();
         $data['role'] = $request->role;
         User::where('id', $id)->update($data);
-        return redirect()->back();
+        return back()->with("data-updated", "Data Updated Successfully");
     }
 }
