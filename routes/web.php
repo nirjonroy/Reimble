@@ -46,6 +46,13 @@ Route::group(['middleware' => ['Manufacturer']], function(){
     Route::get('Manufacturer/OpenAccount/{id}/{companyName}', 'Manufacturer\ManufacturerController@OpenAccount')->name('Manufacturer.OpenAccount');
 });
 
+Route::group(['middleware' => ['Retailer']], function(){
+    Route::get('Retailer-dashboard', 'Retailer\RetailerController@index');
+    Route::get('Retailer/OpenAccount/{id}/{companyName}', 'Retailer\RetailerController@OpenAccount');
+});
+
+Route::get('Distributor-dashboard', 'Distributor\DistributorController@index');
+Route::get('Dealer-dashboard', 'Dealer\DealerController@index');
 
 
 Route::group(['middleware' => ['Admin']], function(){

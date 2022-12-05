@@ -49,6 +49,9 @@ class Kernel extends HttpKernel
         'Manufacturer' => [
             \App\Http\Middleware\Manufacturer::class,   
         ],
+        'Retailer' => [
+            \App\Http\Middleware\Retailer::class,   
+        ],
         
     ];
 

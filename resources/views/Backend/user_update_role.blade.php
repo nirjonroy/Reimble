@@ -13,9 +13,9 @@
                     <option >Select</option>
                     <option value="2">Manufacturer</option>
                     <option value="1">Admin</option>
-                    <option value="0">Distributor</option>
-                    <option value="0">Delar</option>
-                    <option value="0">Ratailer</option>
+                    <option value="3">Distributor</option>
+                    <option value="4">Dealer</option>
+                    <option value="5">Retailer</option>
                 </select><br>
                     <input type="submit" class="btn btn-success">
             </form>
