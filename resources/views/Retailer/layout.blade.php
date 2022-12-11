@@ -317,17 +317,31 @@
                 }
                 });
       
-        function allData(){
-          $.ajax({
+                function allData(){
+        $.ajax({
             type: "GET",
             dataType : 'json',
-            url : "Retailer/all-Category/",
-            success: function(data){
-              console.log(data);
+            url : "/Retailer/all-Category/",
+            success : function(response){
+                var data = ""
+                $.each(response, function(key, value){
+                  data = data + "<tr>"
+                  data = data + "<td>"+value.id+"</td>"
+                  data = data + "<td>"+value.categoryName+"</td>"
+                  data = data + "<td>"+value.CategoryDescription+"</td>"
+                  data = data + "<td>"+value.status+"</td>"
+                  data = data + "<td>"
+                  data = data + "<button class='btn-btn-sm btn-success mr-2'> Edit </button>"
+                  data = data + "<button class='btn-btn-sm btn-danger mr-2'> Delete </button>"
+                  data = data + "</td>"
+                  data = data + "</tr>"
+                })
+
+                $('tbody').html(data);
             }
-          })
-        }
-        allData();
+        })
+    }
+    allData();
     </script>
 
   </body>
