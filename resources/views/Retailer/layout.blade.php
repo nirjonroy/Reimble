@@ -317,7 +317,7 @@
                 }
                 });
       
-                function allData(){
+       function catAllData(){
         $.ajax({
             type: "GET",
             dataType : 'json',
@@ -337,11 +337,11 @@
                   data = data + "</tr>"
                 })
 
-                $('tbody').html(data);
+                $('#catTable').html(data);
             }
         })
     }
-    allData();
+    catAllData();
     </script>
 
   </body>

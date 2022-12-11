@@ -20,7 +20,7 @@
         <th>Status</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="catTable">
       <!-- <tr>
         <td>John</td>
         <td>Doe</td>
