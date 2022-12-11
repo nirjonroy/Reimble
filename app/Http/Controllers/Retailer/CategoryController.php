@@ -17,4 +17,19 @@ class CategoryController extends Controller
         $data = Category::orderBy('id', 'DESC')->where('userId', Auth::user()->id)->get();
         return response()->json($data);
     }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'categoryName' => 'required',
+        ]);
+  
+        
+        $data = Category::insert([
+            'userId' => $request->userId,
+            'categoryName' => $request->categoryName,
+            'CategoryDescription' => $request->CategoryDescription,
+            
+        ]);
+        return response()->json($data);
+    }
 }

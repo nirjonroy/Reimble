@@ -33,30 +33,28 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-header">
-                    <span id="addT">Add Teacher</span>
-                    <span id="updateT">Update Teacher</span>
+                    <span id="addT">Add Category</span>
+                    <span id="updateT">Update Category</span>
                 </div>
             </div>
         
+
     <div class="form-group">
-      <label class="control-label col-sm-2" for="name">Name:</label>
+      <label class="control-label col-sm-2" for="categoryName">Name:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="name" placeholder="Enter name" >
+     
+      <input type="hidden" class="form-control" id="userId" value="{{Auth::user()->id}}" >
+      <input type="text" class="form-control" id="categoryName" placeholder="Category Name" >
        
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="title">Title:</label>
+      <label class="control-label col-sm-2" for="CategoryDescription">Description:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="title" placeholder="Enter title" >
+        <input type="text" class="form-control" id="CategoryDescription" placeholder="Enter Description" >
       </div>
     </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="institute">Institute:</label>
-      <div class="col-sm-10">          
-        <input type="text" class="form-control" id="institute" placeholder="Enter institute" >
-      </div>
-    </div>
+    
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <!-- <button type="submit" id="addButton" onclick="addData()" class="btn btn-warning">Submit</button> -->

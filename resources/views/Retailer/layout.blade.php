@@ -342,6 +342,36 @@
         })
     }
     catAllData();
+
+    function clearData(){
+        $('#userId').val('');
+        $('#categoryName').val('');
+        $('#CategoryDescription').val('');
+    }
+        // data insert
+    function addData(){
+        var userId = $('#userId').val();
+        var categoryName = $('#categoryName').val();
+        var CategoryDescription = $('#CategoryDescription').val();
+        // console.log(name);
+        $.ajax({
+            type: "POST",
+            dataType:"json",
+            data:{userId:userId, categoryName:categoryName, CategoryDescription:CategoryDescription, _token: '{{csrf_token()}}'},
+            url:"/Retailer/store-Category/",
+            success: function(data){
+                clearData();
+                catAllData();
+                console.log('succesfully data added');
+            },
+            error: function(error){
+                console.log(error);
+                
+
+            }
+        })
+
+    }
     </script>
 
   </body>

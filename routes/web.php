@@ -51,6 +51,7 @@ Route::group(['middleware' => ['Retailer']], function(){
     Route::get('Retailer/OpenAccount/{id}/{companyName}', 'Retailer\RetailerController@OpenAccount');
     Route::get('Retailer/Category/{id}/{companyName}', 'Retailer\CategoryController@index');
     Route::get('/Retailer/all-Category/', 'Retailer\CategoryController@show');
+    Route::post('/Retailer/store-Category/', 'Retailer\CategoryController@store');
 });
 
 Route::get('Distributor-dashboard', 'Distributor\DistributorController@index');
