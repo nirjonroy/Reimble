@@ -365,7 +365,8 @@
                 console.log('succesfully data added');
             },
             error: function(error){
-                console.log(error);
+                $('#catErrorMessange').text(error.response);
+                console.log(error.response);
                 
 
             }

@@ -54,6 +54,8 @@
         <input type="text" class="form-control" id="CategoryDescription" placeholder="Enter Description" >
       </div>
     </div>
+
+    <span class="text-danger" id="catErrorMessange"></span>
     
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
