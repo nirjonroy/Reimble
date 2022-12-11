@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <base href="./">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -65,11 +66,11 @@
             <svg class="nav-icon">
               <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
             </svg> Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
-        <li class="nav-title">Theme</li>
-        <li class="nav-item"><a class="nav-link" href="colors.html">
+        <li class="nav-title">Category</li>
+        <li class="nav-item"><a class="nav-link" href="{{url('Retailer/Category', ['id'=>Auth::user()->id, 'companyName'=>Auth::user()->companyName ])}}">
             <svg class="nav-icon">
               <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
-            </svg> Colors</a></li>
+            </svg> Category</a></li>
         <li class="nav-item"><a class="nav-link" href="typography.html">
             <svg class="nav-icon">
               <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
@@ -296,6 +297,7 @@
       </footer>
     </div>
     <!-- CoreUI and necessary plugins-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
     <script src="{{asset('Retail/vendors/@coreui/coreui/js/coreui.bundle.min.js')}}"></script>
     <script src="{{asset('Retail/vendors/simplebar/js/simplebar.min.js')}}"></script>
     <!-- Plugins and scripts required by this view-->
@@ -304,6 +306,28 @@
     <script src="{{asset('Retail/vendors/@coreui/utils/js/coreui-utils.js')}}"></script>
     <script src="{{asset('Retail/js/main.js')}}"></script>
     <script>
+      $('#addT').show();
+      $('#addCatButton').show();
+      $('#updateT').hide();
+      $('#updateCatButton').hide();
+
+      $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+                });
+      
+        function allData(){
+          $.ajax({
+            type: "GET",
+            dataType : 'json',
+            url : "Retailer/all-Category/",
+            success: function(data){
+              console.log(data);
+            }
+          })
+        }
+        allData();
     </script>
 
   </body>
