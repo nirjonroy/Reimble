@@ -35,6 +35,7 @@
     <!-- We use those styles to show code examples, you should remove them in your application.-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
     <link href="{{asset('Retail/css/examples.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <script>
@@ -296,8 +297,16 @@
         <div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/docs/">CoreUI UI Components</a></div>
       </footer>
     </div>
+    <!-- datatables -->
+
+    
+    
+
     <!-- CoreUI and necessary plugins-->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
     <script src="{{asset('Retail/vendors/@coreui/coreui/js/coreui.bundle.min.js')}}"></script>
     <script src="{{asset('Retail/vendors/simplebar/js/simplebar.min.js')}}"></script>
     <!-- Plugins and scripts required by this view-->
@@ -306,6 +315,10 @@
     <script src="{{asset('Retail/vendors/@coreui/utils/js/coreui-utils.js')}}"></script>
     <script src="{{asset('Retail/js/main.js')}}"></script>
     <script>
+        $(document).ready( function () {
+        $('#cat_table').DataTable();
+        });
+      
       $('#addT').show();
       $('#addCatButton').show();
       $('#updateT').hide();
@@ -373,6 +386,8 @@
         })
 
     }
+
+    
     </script>
 
   </body>

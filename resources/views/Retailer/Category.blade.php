@@ -8,16 +8,17 @@
 
 <div style="padding:30px"></div>
 <div class="container">
-    <h2 style="color:red">ajax</h2>
+    <h2 style="color:red">Category</h2>
     <div class="row">
         <div class="col-sm-8">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-hover" id="cat_table">
     <thead>
       <tr>
         <th>Id</th>
         <th>Category Name</th>
         <th>Description</th>
         <th>Status</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody id="catTable">
